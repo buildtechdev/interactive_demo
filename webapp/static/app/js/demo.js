@@ -129,7 +129,7 @@ $(document).ready(function() {
 	$('.sony-tv').on('click', function() {
 		watching = 1;
 		hideQuestion();
-		$('.subtitle').text('Click anywhare to show product details.');
+		$('.subtitle').text('Click anywhere to show product details.');
 		$('.subtitle').show();
 	})
 

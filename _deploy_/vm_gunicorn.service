@@ -1,0 +1,17 @@
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+User=dasco
+Group=www-data
+WorkingDirectory=/home/dasco/WorkAreas/event360
+ExecStart=/home/dasco/WorkAreas/event360/_venv_/bin/gunicorn \
+          --access-logfile - \
+          --workers 3 \
+          --bind unix:/run/gunicorn.sock \
+          webapp.wsgi:application
+
+[Install]
+WantedBy=multi-user.target

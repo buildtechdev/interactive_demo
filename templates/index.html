@@ -1,0 +1,163 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Onedash22 - Interactive Video Demo</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Skeleton CSS & Featherlight -->
+	<link rel="stylesheet" href="{% static 'app/css/normalize.css' %}">
+	<link rel="stylesheet" href="{% static 'app/css/skeleton.css' %}">
+	<link rel="stylesheet" href="{% static 'app/css/featherlight.css' %}">
+
+	<!-- Interaction CSS -->
+	<link rel="stylesheet" href="{% static 'app/css/interaction.css' %}">
+
+	<style type="text/css">
+		body {
+			backdrop-filter: blur(5px);
+			background-image: url("{% static 'images/DSC02332_1.jpg'%}");
+			/* Full height */
+			height: 100%;
+			/* Center and scale the image nicely */
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+		.header {
+			height: 10px;
+			margin: 25px;
+		}
+
+		.subtitle{
+			position: absolute;
+			background-color: #d3c5c5;
+			opacity: 0.3;
+			width: 650px;
+			height: 25px;
+			bottom: 15px;
+			left: 150px;
+			cursor: pointer;
+			z-index: 1000;
+		}
+
+	</style>
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="row header">
+			<img src="{% static 'images/logo.png'%}" style="width: 25%;">
+		</div>
+		<div class="row videoArea">
+			<div class="hotspot box1-1"></div><div class="hotspot box1-2"></div><div class="hotspot box1-3"></div><div class="hotspot box1-4"></div><div class="hotspot box1-5"></div>
+			<div class="hotspot box2-1"></div><div class="hotspot box2-2"></div><div class="hotspot box2-3"></div><div class="hotspot box2-4"></div><div class="hotspot box2-5"></div>
+			<div class="hotspot box3-1"></div><div class="hotspot box3-2"></div><div class="hotspot box3-3"></div><div class="hotspot box3-4"></div><div class="hotspot box3-5"></div>
+			<div class="hotspot box4-1"></div><div class="hotspot box4-2"></div><div class="hotspot box4-3"></div><div class="hotspot box4-4"></div><div class="hotspot box4-5"></div>
+			<div class="hotspot box5-1"></div><div class="hotspot box5-2"></div><div class="hotspot box5-3"></div><div class="hotspot box5-4"></div><div class="hotspot box5-5"></div>
+			<video id="video-content" autoplay="false">
+				<source src="/media/videos/demo01.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+			<div class="subtitle" style="display: none;">
+				&nbsp;Click on the monitor display area to open website, or click play button to continue.
+			</div>
+			<div class="playpause">
+				<input type="checkbox" value="None" id="playpause" name="check" checked/>
+				<label for="playpause" tabindex=1></label>
+			</div>
+		</div>
+		<div class="row descArea">
+			<h5>Interactive Video Capability</h5>
+			<p>This page is prepared by Onedash22 to demonstrate the interactive video capability using web technology.
+				The video was taken by low quality phone camera to serve as proof of concept only. </p>
+			<hr>
+			<h5>Video Timeline</h6>
+				<div class="current">0:00</div>
+		</div>
+	</div>
+
+	<!-- Popups -->
+	<div class="lightbox popUpQuestion1">
+		<div class="q1-content1">
+		<h4>Question 1</h4>
+		<p>Would you like to know what kind of phone it is?</p>
+		<br>
+		<a href="#" class="button longBtns not-interested">No, I'm not interested.</a>
+		<a href="#" class="button longBtns interested">Yes, I'm curious please show me.</a>
+		</div>
+		<div class="q1-content2" style="display: none;">
+			<h4>Phone Brand</h4>
+			<img src="{% static 'images/lenovo-vibe-p2.jpg' %}">
+		</div>
+	</div>
+
+	<div class="lightbox popUpQuestion2">
+		<div class="q2-content1">
+		<h4>Question 2</h4>
+		<p>Would you like to know what speaker and model it is?</p>
+		<br>
+		<a href="#" class="button longBtns not-interested2">No, I'm not interested.</a>
+		<a href="#" class="button longBtns interested2">Yes, I'm curious please show me.</a>
+		</div>
+		<div class="q2-content2" style="display: none;">
+			<h4>Speaker Brand</h4>
+			<img src="{% static 'images/bose-soundtouch10.png' %}">
+		</div>
+	</div>
+
+	<div class="lightbox popUpQuestion4">
+		<h4>Play next video content</h4>
+		<p>Which item you are interested to watch next?</p>
+		<br>
+		<a href="#" class="button longBtns sony-tv">Sony TV sample display</a>
+		<a href="#" class="button longBtns black-pen">Black Sharpee sample</a>
+		<a href="#" class="button longBtns yellow-pen">Yellow Sharpee sample</a>
+		<a href="#" class="button longBtns white-pen">White Sharpee sample</a>
+		<a href="#" class="button longBtns red-pen">Red Sharpee sample</a>
+		<a href="#" class="button longBtns blue-pen">Blue Sharpee sample</a>
+		<a href="#" class="button longBtns thanks">None, thank you!</a>
+	</div>
+
+	<div class="lightbox sony-tv-details">
+		<h4>Sony Bravia</h4>
+		<img src="{% static 'images/sony_bravia.png' %}">
+	</div>
+
+	<div class="lightbox youtube">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/reg8PPNXZjw" frameborder="0" allow="accelerometer; autoplay; 
+		clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+
+	<!-- jQuery -->
+	<script src="{% static 'assets/libs/jquery/dist/jquery.min.js' %}"></script>
+
+	<!-- Featherlight js -->
+	<script src="{% static 'app/js/featherlight.js' %}"></script>
+
+	<!-- GreenSock -->
+	<script src="{% static 'app/js/TweenMax.min.js' %}"></script>
+
+	<!-- Interaction js -->
+	<script src="{% static 'app/js/interaction.js' %}"></script>
+
+	<!-- app demo js -->
+	<script src="{% static 'app/js/demo.js' %}"></script>
+
+	<script>
+
+		$(document).ready(function () {
+
+
+
+		});
+
+	</script>
+</body>
+
+</html>

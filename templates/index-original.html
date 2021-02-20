@@ -1,0 +1,330 @@
+
+{% extends 'partials/_base.html' %}
+
+{% load static %}
+
+{% block page_style %}
+  <link href="{% static 'app/css/style2.css' %}" rel="stylesheet" />
+  <style>
+    .container-fluid {
+      padding: 0 15px 0 15px;
+    }
+
+    .topheader {
+      padding: 0px 0px;
+      background: #ffffff;
+    }
+
+    .fix-width {
+      width: 100%;
+      max-width: 1600px;
+      padding: 0 10px !important;
+      margin: 0 15px !important;
+    }
+
+    .register_btn {
+      margin: 20px 20px 20px 20px;
+    }
+
+    .Thumb-Box{
+      display:inline-block;
+      width: 100%;
+      height: 100%;
+      }
+
+    .Thumb-Box a{
+      display:inline-block;
+      height:100%;
+      width:100%;
+      padding:0;
+      margin:0;
+    }
+
+  </style>
+{% endblock %}
+
+{% block content %}
+
+<!-- <body class="fix-header"> -->
+  
+  <!-- ============================================================== -->
+  <!-- Preloader - style you can find in spinners.css -->
+  <!-- ============================================================== -->
+  <div class="preloader">
+    <svg class="circular" viewBox="25 25 50 50">
+      <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+    </svg>
+  </div>
+  <!-- ============================================================== -->
+  <!-- End Preloader - style you can find in spinners.css -->
+  <!-- ============================================================== -->
+
+  <!-- ============================================================== -->
+  <!-- Main wrapper - style you can find in pages.scss -->
+  <!-- ============================================================== -->
+  <div id="main-wrapper">
+    <!-- ============================================================== -->
+    <!-- Topbar header - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <header style="background-color:#ddebfa;" id="top">
+      <div class="fix-width">
+        <nav class="navbar navbar-expand-md navbar-light p-l-0">
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Logo will be here -->
+          <a class="navbar-brand" href="/"><img width="10%" height="10%" src="/media/web-defaults/logo.png"
+              alt="admin template" class="dark-logo"/>&nbsp;Interactive Video Demo</a>
+          
+          <!-- This is the navigation menu -->
+          <!-- <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto stylish-nav">
+              <li class="nav-item">
+                <div class="col-sm-12 text-center ">
+                  Already have an account? <a href="/" class="text-info ml-1 ">Sign In</a>
+                </div>
+              </li>
+            </ul>
+          </div> -->
+        </nav>
+      </div>
+    </header>
+    <!-- ============================================================== -->
+    <!-- Page wrapper  -->
+    <!-- ============================================================== -->
+    <div class="page-wrapper">
+      <!-- ============================================================== -->
+      <!-- Container fluid  -->
+      <!-- ============================================================== -->
+      <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <div class="fix-width">
+          <div class="row banner-text">
+            <div class="col-lg-5">
+                  
+                  A virtual tour is a simulation of an existing location, usually composed of a sequence of videos or still images. 
+                  It may also use other multimedia elements such as sound effects, music, narration, and text. It is distinguished 
+                  from the use of live television to affect tele-tourism.
+
+                  <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
+                        <li data-target="#carouselExampleIndicators2" data-slide-to="3"></li>
+                    </ol>
+
+                    <div class="carousel-inner" role="listbox">
+                      <div class="carousel-item active">
+                          <img class="img-fluid" src="/media/web-promotion/img1.jpg" alt="First slide">
+                          <div class="carousel-caption d-none d-md-block">
+                              <h3 class="text-white">Promotion Title 1</h3>
+                              <p>Promotional image 1</p>
+                          </div>
+                      </div>
+                      <div class="carousel-item">
+                          <img class="img-fluid" src="/media/web-promotion/img2.jpg" alt="First slide">
+                          <div class="carousel-caption d-none d-md-block">
+                              <h3 class="text-white">Promotion Title 2</h3>
+                              <p>Promotional image 2</p>
+                          </div>
+                      </div>
+                      <div class="carousel-item">
+                          <img class="img-fluid" src="/media/web-promotion/img3.jpg" alt="First slide">
+                          <div class="carousel-caption d-none d-md-block">
+                              <h3 class="text-white">Promotion Title 3</h3>
+                              <p>Promotional image 3</p>
+                          </div>
+                      </div>
+                    </div>
+
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators2"
+                        role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators2"
+                        role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+               <p class="subtext">
+                  {{ site.writeup  }}
+              </p>
+
+              <div class="down-btn">
+                <a href="/gallery" class="btn btn-success m-b-10">OUR GALLERY</a>
+	      </div>
+            </div>
+
+            <div class="col-lg-7">
+            <!-- ============================================================== -->
+            <!-- Registration box.scss -->
+            <!-- ============================================================== -->
+            <div class="p-4 bg-white rounded border">
+                <div>
+                    <div class="logo">
+                        <h2 class="box-title mb-3">Contact Us</h2>
+                    </div>
+                    <!-- Form -->
+                    <div class="row ">
+                        <div class="col-12">
+                          	<!-- Alerts -->
+								            {% include 'partials/_alerts.html' %}
+                            <form class="form-horizontal mt-3 form-material" action="/contact-us" method="POST">
+                                {% csrf_token %}
+                                <div class="form-group mb-3">
+                                    <div class="col-xs-12">
+                                        <input type="text" name="first_name" class="form-control" value="{{ values.first_name }}" placeholder="Firstname" required>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3">
+                                  <div class="col-xs-12">
+                                      <input type="text" name="last_name" class="form-control" value="{{ values.last_name }}" placeholder="Lastname" required>
+                                  </div>
+                                </div>
+                                <div class="form-group mb-3 ">
+                                    <div class="col-xs-12">
+                                        <input type="email" name="email" class="form-control"  value="{{ values.email }}" placeholder="Email" required>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3 ">
+                                    <div class="col-xs-12">
+                                        <textarea rows="5" name="question" class="form-control" value="{{ values.question }}" placeholder="Inquiry" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group text-center mb-3">
+                                    <div class="col-xs-12">
+                                        <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">SEND</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>        
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- Registration box.scss -->
+            <!-- ============================================================== -->
+            </div>
+          </div>
+        </div>
+        <br>
+        <hr>
+        <!-- ============================================================== -->
+        <!-- Key Projects -->
+        <!-- ============================================================== -->
+        <div class="fix-width">
+
+            <div class="col-md-12">
+              <div class="fix-width icon-section">
+                <small class="text-info">KEY PROJECTS</small>
+                <h4 class="display-7">
+                  Feel free to check our previous projects.
+                </h4>
+                <div class="row">
+
+                    <div class="col-4 d-flex align-items-stretch">
+                        <!-- Card -->
+                        <div class="card">
+                          <img class="card-img-top img-fluid" src="/media/events/project1.png" alt="Card image cap"><div class="card-body">
+                                <h2 class="card-title">3D Virtual Event</h2>
+                                <p class="card-text">Quick Actions are our new way of optimizing the process of hotspot creation. 
+                                  They’re an alternative way of setting hotspots, saving you many clicks when it comes to putting your tour together. 
+                                  The time- and click savings are tremendous and makes this update a big deal especially for those who create many or 
+                                  very large virtual tours with lots of interactivity.</p>
+                            </div>
+                            <div class="bg-light">
+                              <a href="/media/events/project1/index.htm" class="btn btn-danger register_btn">VIEW</a>
+                            </div>
+                        </div>
+                        <!-- Card -->
+                    </div>
+
+                    <div class="col-4 d-flex align-items-stretch">
+                      <!-- Card -->
+                      <div class="card">
+                          <img class="card-img-top img-fluid" src="/media/events/project2.png" alt="Card image cap">
+                          <div class="card-body">
+                              <h2 class="card-title">Citibank Gold</h2>
+                              <p class="card-text">While travel has come to a near standstill during the coronavirus pandemic, 
+                                technology is allowing you to visit almost any place on the planet in the blink of an eye. 
+                                According to Google Keyword Planner data, searches for the term “virtual tour” increased seven times—from 
+                                1,300 in February to almost 10,000 in March, when governments around the world began locking down countries and cities. 
+                                And as billions of people around the world continue to shelter in place, the numbers keep rising.</p>
+                          </div>
+                          <div class="bg-light">
+                            <a href="/media/events/project2/index.htm" class="btn btn-danger register_btn">VIEW</a>
+                          </div>
+                      </div>
+                      <!-- Card -->
+                    </div>
+
+                    <div class="col-4 d-flex align-items-stretch">
+                        <!-- Card -->
+                        <div class="card">
+                            <img class="card-img-top img-fluid" src="/media/events/project3.png" alt="Card image cap">
+                            <div class="card-body">
+                                <h2 class="card-title">Furniture Show Room</h2>
+                                <p class="card-text">Now you don’t need to battle the crowds at the Louvre to get an up-close look at the Mona Lisa. 
+                                  Topping the list of the world’s top-searched virtual tours is Paris’s legendary art museum. Dive deep into the museum’s 
+                                  archives with detailed virtual tours on the Louvre’s website. Another option for museum-goers? “Google Arts & Culture has 
+                                  teamed up with over 2,500 museums and galleries around the world to bring priceless art and experiences into your living room,
+                                  ” says Ronni Kenoian, manager of ecommerce for InsureMyTrip.</p>
+                            </div>
+                            <div class="bg-light">
+                              <a href="/media/events/project3/index.htm" class="btn btn-danger register_btn">VIEW</a>
+                            </div>
+                        </div>
+                        <!-- Card -->
+                    </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <br>
+
+        <!-- ============================================================== -->
+        <!-- End Page Content -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <a class="bt-top btn btn-circle btn-lg btn-info" href="#top"><i class="ti-arrow-up"></i></a>
+	      {% include 'partials/_footer.html' %}
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+      </div>
+      <!-- ============================================================== -->
+      <!-- End Container fluid  -->
+      <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
+  </div>
+  <!-- ============================================================== -->
+  <!-- End Main wrapper - style you can find in pages.scss -->
+  <!-- ============================================================== -->
+{% endblock %}
+
+{% block page_scripts %}
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="{% static 'bootstrap/js/popper.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <!-- jQuery for carousel -->
+    <script src="{% static 'assets/owl.carousel/owl.carousel.min.js' %}"></script>
+    <!--Custom JavaScript MOVE IT -->
+    <script src="{% static 'app/js/pages/landing/custom.min.js' %}"></script>
+{% endblock %}

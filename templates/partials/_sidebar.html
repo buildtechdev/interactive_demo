@@ -1,0 +1,149 @@
+{% load static %}
+
+<!-- ============================================================== -->
+<!-- Left Sidebar - style you can find in sidebar.scss  -->
+<!-- ============================================================== -->
+<aside class="left-sidebar">
+    <!-- Sidebar scroll-->
+    <div class="scroll-sidebar">
+        <!-- User profile -->
+        <div class="user-profile position-relative"
+            style="background: url(/static/images/background/user-info.jpg) no-repeat;">
+            <!-- User profile image -->
+            <div class="profile-img"> 
+                <img src="/media/" alt="user" width="50" class="profile-pic rounded-circle">
+            </div>
+            
+            <!-- User profile text-->
+            <div class="profile-text pt-1">
+                <a href="#" class="dropdown-toggle u-dropdown w-100 text-white d-block position-relative"
+                    data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">{{ user.first_name }} {{ user.last_name }}</a>
+                <div class="dropdown-menu animated flipInY">
+                    <a href="/" class="dropdown-item"><i class="ti-user"></i> My Profile</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="/" class="dropdown-item"><i class="ti-calendar"></i> My Schedules</a>
+                    <a href="#" class="dropdown-item"><i class="ti-email"></i> My Messages</a>
+                    <a href="#" class="dropdown-item"><i class="ti-bell"></i> My Notifications</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="/" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a>
+                </div>
+            </div>
+        </div>
+        <!-- End User profile text-->
+        <!-- Sidebar navigation-->
+        <!--<nav class="sidebar-nav">
+            <ul id="sidebarnav">
+
+                <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark active" href="javascript:void(0)" aria-expanded="false">
+                    <i class="mdi mdi-gradient"></i><span class="hide-menu">Events </span>
+                    <span fxflex="" ng-reflect-fx-flex="" style="flex: 1 1 0%; box-sizing: border-box;"></span>
+                    <span class="badge py-1 badge-danger mr-2">New</span></a>
+                    <ul aria-expanded="false" class="collapse first-level in">
+                        <li class="sidebar-item"><a href="/lobby" class="sidebar-link active"><i class="mdi mdi-message-video"></i>
+                            <span class="hide-menu"> Lobby </span></a></li>
+                        <li class="sidebar-item"><a href="/virtual" class="sidebar-link"><i class="mdi mdi-walk"></i>
+                            <span class="hide-menu"> Virtual Booth</span></a></li>
+                        <li class="sidebar-item"><a href="/l-sessions" class="sidebar-link"><i class="mdi mdi-comment-processing-outline"></i>
+                            <span class="hide-menu"> Live Sessions </span></a></li>
+                        <li class="sidebar-item"><a href="/u-sessions" class="sidebar-link"><i class="mdi mdi-comment-processing-outline"></i>
+                            <span class="hide-menu"> Upcoming Sessions </span></a></li>
+                        <li class="sidebar-item"><a href="/r-sessions" class="sidebar-link"><i class="mdi mdi-comment-processing-outline"></i>
+                            <span class="hide-menu"> Recorded Sessions </span></a></li>
+                        <li class="sidebar-item"><a href="/speakers" class="sidebar-link"><i class="mdi mdi-comment-processing-outline"></i>
+                            <span class="hide-menu"> Speakers </span></a></li>
+                        <li class="sidebar-item"><a href="/networking" class="sidebar-link"><i class="mdi mdi-comment-processing-outline"></i>
+                            <span class="hide-menu"> Breakout Rooms </span></a></li>
+                        <li class="sidebar-item"><a href="/marketplace" class="sidebar-link"><i class="mdi mdi-comment-processing-outline"></i>
+                            <span class="hide-menu"> Marketplace </span></a></li>
+                        <li class="sidebar-item"><a href="/discussions" class="sidebar-link"><i class="mdi mdi-comment-processing-outline"></i>
+                            <span class="hide-menu"> Discussions </span></a></li>
+                    </ul>
+                </li>
+    
+            </ul>
+        </nav> -->
+        
+        <nav class="sidebar-nav">
+            <ul id="sidebarnav">
+
+                <li class="nav-small-cap">
+                    <i class="mdi mdi-dots-horizontal"></i>
+                    <span class="hide-menu">Events</span>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                        <i class="mdi mdi-timetable"></i>
+                        <span class="hide-menu">Places & Time </span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse first-level">
+                        <li class="sidebar-item">
+                            <a href="/lobby" class="sidebar-link">
+                                <i class="mdi mdi-adjust"></i>
+                                <span class="hide-menu"> Lobby </span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="/virtual" class="sidebar-link">
+                                <i class="mdi mdi-adjust"></i>
+                                <span class="hide-menu"> Virtual Booths</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item"> 
+                    <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                        <i class="mdi mdi-video-switch"></i><span class="hide-menu">Sessions </span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse first-level">
+                        <li class="sidebar-item"><a href="/l-sessions" class="sidebar-link">
+                            <i class="mdi mdi-format-align-left"></i>
+                            <span class="hide-menu"> Live Sessions </span></a>
+                        </li>
+                        <li class="sidebar-item"><a href="/u-sessions" class="sidebar-link">
+                            <i class="mdi mdi-format-align-right"></i>
+                            <span class="hide-menu"> Upcoming Sessions </span></a>
+                        </li>
+                        <li class="sidebar-item"><a href="/r-sessions" class="sidebar-link">
+                            <i class="mdi mdi-format-float-left"></i>
+                            <span class="hide-menu"> Recorded Sessions </span></a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-small-cap"><i class="mdi mdi-dots-horizontal"></i>
+                    <span class="hide-menu">Connections</span></li>
+
+                <li class="sidebar-item"> 
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/speakers" aria-expanded="false">
+                        <i class="mdi mdi-voice"></i><span class="hide-menu">Speakers</span></a>
+                </li>
+                <li class="sidebar-item"> 
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/networking" aria-expanded="false">
+                        <i class="mdi mdi-webhook"></i><span class="hide-menu">Networking</span></a>
+                </li>
+                <li class="sidebar-item"> 
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/marketplace" aria-expanded="false">
+                        <i class="mdi mdi-cart-outline"></i><span class="hide-menu">Marketplace</span></a>
+                </li>
+                <li class="sidebar-item"> 
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/discussions" aria-expanded="false">
+                        <i class="mdi mdi-forum"></i><span class="hide-menu">Discussions</span></a>
+                </li>
+               
+            </ul>
+        </nav>
+        
+        
+        <!-- End Sidebar navigation -->
+    </div>
+    <!-- End Sidebar scroll-->
+    <!-- Bottom points-->
+    <div class="sidebar-footer">
+        <!-- item-->
+        <a href="/" class="link" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
+        <!-- item-->
+        <a href="" class="link" data-toggle="tooltip" title="Chat"><i class="mdi mdi-message-text"></i></a>
+    </div>
+    <!-- End Bottom points-->
+</aside>

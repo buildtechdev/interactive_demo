@@ -8,6 +8,8 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+	<link href="{% static 'app/css/style2.css' %}" rel="stylesheet" />
+
 	<!-- Skeleton CSS & Featherlight -->
 	<link rel="stylesheet" href="{% static 'app/css/normalize.css' %}">
 	<link rel="stylesheet" href="{% static 'app/css/skeleton.css' %}">
@@ -16,126 +18,91 @@
 	<!-- Interaction CSS -->
 	<link rel="stylesheet" href="{% static 'app/css/interaction.css' %}">
 
-	<style type="text/css">
+	<!-- Demo CSS -->
+	<link rel="stylesheet" href="{% static 'app/css/demo.css' %}">
+
+	<style>
+		html,
 		body {
-			backdrop-filter: blur(5px);
-			background-image: url("{% static 'images/DSC02332_1.jpg'%}");
-			/* Full height */
-			height: 100%;
-			/* Center and scale the image nicely */
-			background-position: center;
-			background-repeat: no-repeat;
-			background-size: cover;
+			min-height: 100%;
+			height: 100vh;
 		}
 
-		.header {
-			height: 10px;
-			margin: 25px;
+		.featherlight .featherlight-content {
+    		overflow: unset;
 		}
-
-		.subtitle{
-			position: absolute;
-			background-color: #d3c5c5;
-			opacity: 0.3;
-			width: 650px;
-			height: 25px;
-			bottom: 15px;
-			left: 150px;
-			cursor: pointer;
-			z-index: 1000;
-		}
-
 	</style>
 
 </head>
 
 <body>
+	<div class="row">
+		<img src="{% static 'images/logo.png' %}" style="width: 10%;margin-left: 10px;">
+	</div>
 	<div class="container">
-		<div class="row header">
-			<img src="{% static 'images/logo.png'%}" style="width: 25%;">
-		</div>
-		<div class="row videoArea">
-			<div class="hotspot box1-1"></div><div class="hotspot box1-2"></div><div class="hotspot box1-3"></div><div class="hotspot box1-4"></div><div class="hotspot box1-5"></div>
-			<div class="hotspot box2-1"></div><div class="hotspot box2-2"></div><div class="hotspot box2-3"></div><div class="hotspot box2-4"></div><div class="hotspot box2-5"></div>
-			<div class="hotspot box3-1"></div><div class="hotspot box3-2"></div><div class="hotspot box3-3"></div><div class="hotspot box3-4"></div><div class="hotspot box3-5"></div>
-			<div class="hotspot box4-1"></div><div class="hotspot box4-2"></div><div class="hotspot box4-3"></div><div class="hotspot box4-4"></div><div class="hotspot box4-5"></div>
-			<div class="hotspot box5-1"></div><div class="hotspot box5-2"></div><div class="hotspot box5-3"></div><div class="hotspot box5-4"></div><div class="hotspot box5-5"></div>
+		<!-- START /video-container -->
+		<div class="row videoArea" id="video-container">
+			<div class="nav-wrapper">
+				<nav>
+					<div class="navigation">
+						<ul class="nav-items">
+							<li class="button-item"><a href="#" class="button longBtns home">HOME</a></li>
+							<li class="button-item"><a href="#" class="button longBtns cafe">CAFE</a></li>
+							<li class="button-item"><a href="#" class="button longBtns work">WORK</a></li>
+							<li class="button-item"><a href="#" class="button longBtns driving">DRIVING</a></li>
+						</ul>
+						<div class="nav-toogler"></div>
+					</div>
+				</nav>
+			</div>
+
 			<video id="video-content" autoplay="false">
-				<source src="/media/videos/demo01.mp4" type="video/mp4">
+				<source src="/media/videos/demo02.mp4" type="video/mp4">
 				Your browser does not support the video tag.
 			</video>
-			<div class="subtitle" style="display: none;">
-				&nbsp;Click on the monitor display area to open website, or click play button to continue.
-			</div>
+
 			<div class="playpause">
-				<input type="checkbox" value="None" id="playpause" name="check" checked/>
-				<label for="playpause" tabindex=1></label>
+				<span class="ti-control-play"></span>
+				<!--<span class="ti-control-pause"></span>-->
 			</div>
+			<div class="screen-resize">
+				<span class="ti-fullscreen"></span>
+				<!-- <span class="ti-control-play vcontrol"></span> -->
+			</div>
+
+			<!-- Popups -->
+			<div class="lightbox popUpQuestion1">
+				<a href="#" class="button longBtns call-sister">Call Sister Anne</a>
+				<a href="#" class="button longBtns call-mommy">Call Mommy</a>
+			</div>
+
+			<div class="lightbox popUpQuestion2">
+				<a href="#" class="button longBtns send-text">Send message to Blaire</a>
+				<a href="#" class="button longBtns go-drive">Go drive to her home</a>
+			</div>
+
 		</div>
+		<!-- END /video-container -->
+
 		<div class="row descArea">
 			<h5>Interactive Video Capability</h5>
-			<p>This page is prepared by Onedash22 to demonstrate the interactive video capability using web technology.
-				The video was taken by low quality phone camera to serve as proof of concept only. </p>
+			<p> Interactive video (also known as "IV") is a form of digital video that supports user interaction.
+				Interactive videos provide the viewer the ability to click, on a desktop, or touch on mobile devices
+				within the video for an action to occur.<br><br>
+				This page is prepared by onedash22 web development team to demonstrate the interactive video capability
+				using web technology.
+			</p>
 			<hr>
 			<h5>Video Timeline</h6>
 				<div class="current">0:00</div>
 		</div>
 	</div>
 
-	<!-- Popups -->
-	<div class="lightbox popUpQuestion1">
-		<div class="q1-content1">
-		<h4>Question 1</h4>
-		<p>Would you like to know what kind of phone it is?</p>
-		<br>
-		<a href="#" class="button longBtns not-interested">No, I'm not interested.</a>
-		<a href="#" class="button longBtns interested">Yes, I'm curious please show me.</a>
-		</div>
-		<div class="q1-content2" style="display: none;">
-			<h4>Phone Brand</h4>
-			<img src="{% static 'images/lenovo-vibe-p2.jpg' %}">
-		</div>
-	</div>
 
-	<div class="lightbox popUpQuestion2">
-		<div class="q2-content1">
-		<h4>Question 2</h4>
-		<p>Would you like to know what speaker and model it is?</p>
-		<br>
-		<a href="#" class="button longBtns not-interested2">No, I'm not interested.</a>
-		<a href="#" class="button longBtns interested2">Yes, I'm curious please show me.</a>
-		</div>
-		<div class="q2-content2" style="display: none;">
-			<h4>Speaker Brand</h4>
-			<img src="{% static 'images/bose-soundtouch10.png' %}">
-		</div>
-	</div>
-
-	<div class="lightbox popUpQuestion4">
-		<h4>Play next video content</h4>
-		<p>Which item you are interested to watch next?</p>
-		<br>
-		<a href="#" class="button longBtns sony-tv">Sony TV sample display</a>
-		<a href="#" class="button longBtns black-pen">Black Sharpee sample</a>
-		<a href="#" class="button longBtns yellow-pen">Yellow Sharpee sample</a>
-		<a href="#" class="button longBtns white-pen">White Sharpee sample</a>
-		<a href="#" class="button longBtns red-pen">Red Sharpee sample</a>
-		<a href="#" class="button longBtns blue-pen">Blue Sharpee sample</a>
-		<a href="#" class="button longBtns thanks">None, thank you!</a>
-	</div>
-
-	<div class="lightbox sony-tv-details">
-		<h4>Sony Bravia</h4>
-		<img src="{% static 'images/sony_bravia.png' %}">
-	</div>
-
-	<div class="lightbox youtube">
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/reg8PPNXZjw" frameborder="0" allow="accelerometer; autoplay; 
-		clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	</div>
 
 	<!-- jQuery -->
-	<script src="{% static 'assets/libs/jquery/dist/jquery.min.js' %}"></script>
+	<script src="{% static 'app/js/jquery-1.12.3.min.js' %}"></script>
+	<script src="{% static 'app/js/ios-orientationchange-fix.min.js' %}"></script>
 
 	<!-- Featherlight js -->
 	<script src="{% static 'app/js/featherlight.js' %}"></script>
@@ -146,18 +113,17 @@
 	<!-- Interaction js -->
 	<script src="{% static 'app/js/interaction.js' %}"></script>
 
+	<script src="{% static 'app/js/jquery.rwdImageMaps.js' %}"></script>
 	<!-- app demo js -->
 	<script src="{% static 'app/js/demo.js' %}"></script>
 
 	<script>
-
 		$(document).ready(function () {
-
-
-
 		});
 
 	</script>
 </body>
 
 </html>
+
+<!-- https://stackoverflow.com/questions/60754900/connectionreseterror-while-playing-a-video-file-over-django-with-filefield-and -->

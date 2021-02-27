@@ -1,188 +1,103 @@
 var gTimelapse = 0;
-
-
-var goodChoiceChosen = false;
 var question1Asked = false;
 var question2Asked = false;
-var question3Asked = false;
-var question4Asked = false;
+var imagePosition = 0;
 
-var watching = 0;
+$(document).ready(function () {
 
-$(document).ready(function() {
+	/* Custom controls ---------------------------------------------------- */
+	$('.playpause').on('click', function () {
+		playPauseVideo(null);
+		if (videoContent[0].paused) {
+			$('.playpause span').removeClass('ti-control-pause')
+			$('.playpause span').addClass('ti-control-play')
+		} else {
+			$('.playpause span').removeClass('ti-control-play')
+			$('.playpause span').addClass('ti-control-pause')
+		}
+	});
 
-	$('.not-interested').on('click', function(){
-		hideQuestion();
-		seekToTime(20);
-	})
+	$('.screen-resize').on('click', function () {
+		if ($('.screen-resize span').hasClass('ti-fullscreen')) {
+			$('#video-container').addClass('fullscreen');
+			$('.screen-resize span').removeClass('ti-fullscreen')
+			$('.screen-resize span').addClass('ti-shortcode')
+		} else {
+			$('#video-container').removeClass('fullscreen');
+			$('.screen-resize span').removeClass('ti-shortcode')
+			$('.screen-resize span').addClass('ti-fullscreen')
+		}
+	});
 
 	/* Demo set 1 ---------------------------------------------------------- */
-	$('.box2-1').on('click', function(){
-		if (gTimelapse > 0 && gTimelapse < 4) {
-			showYoutube();
-		}
+	$('.home').on('click', function () {
+		$('.nav-toogler').click();
+		imagePosition = 0;
+		question1Asked = false;
+		question2Asked = false;
+		seekToTime(0);
 	})
 
-	$('.box3-1').on('click', function(){
-		if (gTimelapse > 0 && gTimelapse < 4) {
-			showYoutube();
-		}
+	$('.cafe').on('click', function () {
+		$('.nav-toogler').click();
+		imagePosition = 0;
+		question1Asked = false;
+		question2Asked = false;
+		seekToTime(35);
 	})
 
-	$('.box2-2').on('click', function(){
-		if (gTimelapse > 0 && gTimelapse < 4) {
-			showYoutube();
-		}
+	$('.work').on('click', function () {
+		$('.nav-toogler').click();
+		imagePosition = 0;
+		question1Asked = false;
+		question2Asked = false;
+		seekToTime(90);
 	})
 
-	$('.box3-2').on('click', function(){
-		if (gTimelapse > 0 && gTimelapse < 4) {
-			showYoutube();
-		}
-	})
-
-	$('.box2-3').on('click', function(){
-		if (gTimelapse > 0 && gTimelapse < 4) {
-			showYoutube();
-		}
-	})
-
-	$('.box3-3').on('click', function(){
-		if (gTimelapse > 0 && gTimelapse < 4) {
-			showYoutube();
-		}
+	$('.driving').on('click', function () {
+		$('.nav-toogler').click();
+		imagePosition = 0;
+		question1Asked = false;
+		question2Asked = false;
+		seekToTime(82);
 	})
 
 	/* Demo set 2 ---------------------------------------------------------- */
-	$('.interested').on('click', function(){
-		$('.q1-content1').hide();
-		$('.q1-content2').show();
+	$('.call-sister').on('click', function () {
+		hideQuestion();
 		seekToTime(20);
 	})
 
-	$('.not-interested2').on('click', function(){
+	$('.call-mommy').on('click', function () {
 		hideQuestion();
-	})
-
-	$('.interested2').on('click', function(){
-		$('.q2-content1').hide();
-		$('.q2-content2').show();
+		seekToTime(47);
 	})
 
 	/* Demo set 3 ---------------------------------------------------------- */
-	$('.box2-1').on('click', function(){
-		if (gTimelapse > 27 && gTimelapse < 29) {
-			window.open("https://onedash22.com");
-		}
-	})
-
-	$('.box3-1').on('click', function(){
-		if (gTimelapse > 27 && gTimelapse < 29) {
-			window.open("https://onedash22.com");
-		}
-	})
-
-	$('.box2-2').on('click', function(){
-		if (gTimelapse > 27 && gTimelapse < 29) {
-			window.open("https://onedash22.com");
-		}
-	})
-
-	$('.box3-2').on('click', function(){
-		if (gTimelapse > 27 && gTimelapse < 29) {
-			window.open("https://onedash22.com");
-		}
-	})
-
-	/* Demo set 4 ---------------------------------------------------------- */
-	$('.box2-3').on('click', function(){
-		if (gTimelapse > 27 && gTimelapse < 29) {
-			window.open("https://www.youtube.com");
-		}
-	})
-
-	$('.box2-4').on('click', function(){
-		if (gTimelapse > 27 && gTimelapse < 29) {
-			window.open("https://www.youtube.com");
-		}
-	})
-
-	$('.box3-3').on('click', function(){
-		if (gTimelapse > 27 && gTimelapse < 29) {
-			window.open("https://www.youtube.com");
-		}
-	})
-
-	$('.box3-4').on('click', function(){
-		if (gTimelapse > 27 && gTimelapse < 29) {
-			window.open("https://www.youtube.com");
-		}
-	})
-
-	$('.box4-4').on('click', function(){
-		if (gTimelapse > 27 && gTimelapse < 29) {
-			window.open("https://www.youtube.com");
-		}
-	})
-
-	/* Demo set 5 ---------------------------------------------------------- */
-	$('.sony-tv').on('click', function() {
-		watching = 1;
+	$('.send-text').on('click', function () {
 		hideQuestion();
-		$('.subtitle').text('Click anywhere to show product details.');
-		$('.subtitle').show();
+		seekToTime(60);
 	})
 
-	$('.black-pen').on('click', function() {
-		watching = 2;
+	$('.go-drive').on('click', function () {
 		hideQuestion();
-		seekToTime(70);
+		seekToTime(82);
 	})
-
-	$('.yellow-pen').on('click', function() {
-		watching = 3;
-		hideQuestion();
-		seekToTime(86);
-	})
-
-	$('.white-pen').on('click', function() {
-		watching = 4;
-		hideQuestion();
-		seekToTime(104);
-	})
-
-	$('.red-pen').on('click', function() {
-		watching = 5;
-		hideQuestion();
-		seekToTime(122);
-	})
-
-	$('.blue-pen').on('click', function() {
-		watching = 6;
-		hideQuestion();
-		seekToTime(133);
-	})
-
-	$('.thanks').on('click', function() {
-		seekToTime(145);
-		hideQuestion();
-	})
-
-	/* Demo set 6 ---------------------------------------------------------- */
-	$('.hotspot').on('click', function() {
-		if (gTimelapse > 41 && gTimelapse < 49) {
-			playPauseVideo('.sony-tv-details');
-		}
-	})
-
-	/* --------------------------------------------------------------------- */
 
 	addVideoListener(onTrackedVideoFram);
 	addVideoListener(interact);
 
+	/** -------------- **/
+	let navWrapper = document.querySelector('.nav-wrapper'),
+	navToogler = document.querySelector('.nav-toogler')
+
+	navToogler.addEventListener('click', function (event) {
+		navWrapper.classList.toggle('active')
+	})
+
 });
 
-function onTrackedVideoFram(currentTime, duration){
+function onTrackedVideoFram(currentTime, duration) {
 	var formattedCurrentTime = secondsToHms(currentTime);
 	var formattedDurationTime = secondsToHms(duration);
 
@@ -190,71 +105,29 @@ function onTrackedVideoFram(currentTime, duration){
 	$('.duration').text(formattedDurationTime);
 }
 
-function interact(timelapse){
+function interact(timelapse) {
 
 	gTimelapse = timelapse;
 
-	if (timelapse > 11 && !question1Asked) {
-		playPauseVideo('.popUpQuestion1');
+	if (timelapse > 6 && timelapse < 17 && !question1Asked) {
+		showQuestion('.popUpQuestion1');
 		question1Asked = true;
 	}
 
-	if (timelapse > 22 && !question2Asked) {
-		playPauseVideo('.popUpQuestion2');
+	if (timelapse > 17 && timelapse < 40 && question1Asked) {
+		hideQuestion();
+		question1Asked = false;
+	}
+
+	if (timelapse > 40 && timelapse < 45 && !question2Asked) {
+		showQuestion('.popUpQuestion2');
 		question2Asked = true;
 	}
 
-	if (timelapse > 27 && !question3Asked) {
-		$('#playpause').click();
-		$('.subtitle').show();
-		question3Asked = true;
+	if (timelapse > 45 && timelapse < 50 && question2Asked) {
+		hideQuestion();
+		question2Asked = false;
+		seekToTime(60);
 	}
-
-	if (timelapse > 37 && timelapse > 39 && !question4Asked) {
-		$('.subtitle').hide();
-		playPauseVideo('.popUpQuestion4');
-		question4Asked = true;
-	}
-
-	if (timelapse > 50 && watching == 1) {
-		seekToTime(39);
-		watching = 0;
-		question4Asked = false;
-	}
-
-	if (timelapse > 83 && watching == 2) {
-
-		seekToTime(39);
-		watching = 0;
-		question4Asked = false;
-	}
-
-	if (timelapse > 100 && watching == 3) {
-		seekToTime(39);
-		watching = 0;
-		question4Asked = false;
-	}
-
-	if (timelapse > 119 && watching == 4) {
-		seekToTime(39);
-		watching = 0;
-		question4Asked = false;
-	}
-
-	if (timelapse > 131 && watching == 5) {
-		seekToTime(39);
-		watching = 0;
-		question4Asked = false;
-	}
-
-	if (timelapse > 143 && watching == 6) {
-		seekToTime(39);
-		watching = 0;
-		question4Asked = false;
-	}
-
 }
 
-function showYoutube() {
-	playPauseVideo('.youtube');
-}

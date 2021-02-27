@@ -26,3 +26,6 @@ def gallery(request):
     print('DEBUG>>> gallery(): rendering gallery page')
     context = { }
     return render(request, 'gallery.html', context)
+
+def favicon(request):
+    return HttpResponse('')

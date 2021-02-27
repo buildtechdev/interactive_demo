@@ -4,5 +4,6 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('gallery', views.gallery, name='gallery'),
+    path('favicon.ico', views.favicon, name='favicon'),
 ]
 

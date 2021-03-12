@@ -18,15 +18,34 @@ $(document).ready(function () {
 	});
 
 	$('.screen-resize').on('click', function () {
+		var elem = document.getElementById("video-container");
+
 		if ($('.screen-resize span').hasClass('ti-fullscreen')) {
-			$('#video-container').addClass('fullscreen');
+			/* Toggle screen to full */
 			$('.screen-resize span').removeClass('ti-fullscreen')
 			$('.screen-resize span').addClass('ti-shortcode')
+
+			if (elem.requestFullscreen) {
+				elem.requestFullscreen();
+			} else if (elem.webkitRequestFullscreen) { /* Safari */
+				elem.webkitRequestFullscreen();
+			} else if (elem.msRequestFullscreen) { /* IE11 */
+				elem.msRequestFullscreen();
+			}
 		} else {
-			$('#video-container').removeClass('fullscreen');
+			/* Toggle screen to normal */
 			$('.screen-resize span').removeClass('ti-shortcode')
 			$('.screen-resize span').addClass('ti-fullscreen')
+			
+			if(document.exitFullscreen) {
+				document.exitFullscreen();
+			} else if(document.mozCancelFullScreen) {
+				document.mozCancelFullScreen();
+			} else if(document.webkitExitFullscreen) {
+				document.webkitExitFullscreen();
+			}
 		}
+
 	});
 
 	/* Demo set 1 ---------------------------------------------------------- */
@@ -64,23 +83,23 @@ $(document).ready(function () {
 
 	/* Demo set 2 ---------------------------------------------------------- */
 	$('.call-sister').on('click', function () {
-		hideQuestion();
+		hideMenu();
 		seekToTime(20);
 	})
 
 	$('.call-mommy').on('click', function () {
-		hideQuestion();
+		hideMenu();
 		seekToTime(47);
 	})
 
 	/* Demo set 3 ---------------------------------------------------------- */
 	$('.send-text').on('click', function () {
-		hideQuestion();
+		hideMenu();
 		seekToTime(60);
 	})
 
 	$('.go-drive').on('click', function () {
-		hideQuestion();
+		hideMenu();
 		seekToTime(82);
 	})
 
@@ -110,24 +129,33 @@ function interact(timelapse) {
 	gTimelapse = timelapse;
 
 	if (timelapse > 6 && timelapse < 17 && !question1Asked) {
-		showQuestion('.popUpQuestion1');
+		showMenu('.popUpQuestion1');
 		question1Asked = true;
 	}
 
 	if (timelapse > 17 && timelapse < 40 && question1Asked) {
-		hideQuestion();
+		hideMenu();
 		question1Asked = false;
 	}
 
 	if (timelapse > 40 && timelapse < 45 && !question2Asked) {
-		showQuestion('.popUpQuestion2');
+		showMenu('.popUpQuestion2');
 		question2Asked = true;
 	}
 
 	if (timelapse > 45 && timelapse < 50 && question2Asked) {
-		hideQuestion();
+		hideMenu();
 		question2Asked = false;
 		seekToTime(60);
 	}
+
+}
+
+function showMenu(popup) {
+	$(popup).removeClass('hidden');
+}
+
+function hideMenu(popup) {
+	$('.menu').addClass('hidden');
 }
 

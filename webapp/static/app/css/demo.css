@@ -36,7 +36,7 @@ body {
     font-family: "Trebuchet MS", Arial;
     position: absolute;
     opacity: 0.5;
-    top: 23px;
+    top: 0px;
     left: 0px;
     cursor: pointer;
     z-index: 1000;
@@ -265,4 +265,25 @@ video {
 
 .featherlight {
     background: transparent;
+}
+
+.menu {
+    position: absolute;
+    text-align: left;
+    vertical-align: middle;
+    display: inline-block;
+    overflow: auto;
+    border-bottom: 25px solid transparent;
+    background: transparent;
+    cursor: pointer;
+    white-space: normal;
+    left: 50%;
+    top: 75%;
+    margin-top: -100px;
+    margin-left: -100px;
+    z-index: 10000;
+}
+
+.hidden {
+    display: none;
 }
